@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SNT – Acceso Válido</title>
+  <meta name="description" content="Sistema de Validación QR – Acceso confirmado correctamente.">
+
+  <!-- CSS del proyecto SNT -->
+  <!-- <link rel="stylesheet" href="https://qa-usuarios-turnos.argentina.gob.ar/styles.095039e6a6d50589.css"> -->
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css"> -->
+  <link rel="stylesheet" href="assets/css/styles.095039e6a6d50589.css">
+  <link rel="stylesheet" href="assets/css/select2-bootstrap-5-theme.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/snt-validacion.css">
+</head>
+
+<body class="m-0 page-valido">
+  <main class="flex-column d-flex min-vh-100" id="main-content">
+
+    <!-- Topbar -->
+    <div class="topbar d-flex align-items-center p-3">
+      <a id="btn-back-valido" href="pantalla-lectura.html" class="btn-back-icon rounded-circle text-white"
+        style="width: 40px; height: 40px; background: rgba(255,255,255,0.2); text-decoration: none;"
+        title="Volver al escaneo" aria-label="Volver">
+        <svg class="icon-back" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1472 1600">
+          <path fill="currentColor"
+            d="M1472 736v128q0 53-32.5 90.5T1355 992H651l293 294q38 36 38 90t-38 90l-75 76q-37 37-90 37q-52 0-91-37L37 890Q0 853 0 800q0-52 37-91L688 59q38-38 91-38q52 0 90 38l75 74q38 38 38 91t-38 91L651 608h704q52 0 84.5 37.5T1472 736" />
+        </svg>
+      </a>
+    </div>
+
+
+    <!-- QR leído (representación) -->
+    <section class="flex-grow-1 d-flex align-items-center justify-content-center" aria-label="Código QR validado">
+      <div class="qr-display">
+        <!-- QR placeholder SVG -->
+        <svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Módulo TL -->
+          <rect x="10" y="10" width="50" height="50" rx="5" fill="#111" />
+          <rect x="18" y="18" width="34" height="34" rx="3" fill="#fff" />
+          <rect x="24" y="24" width="22" height="22" rx="2" fill="#111" />
+          <!-- Módulo TR -->
+          <rect x="100" y="10" width="50" height="50" rx="5" fill="#111" />
+          <rect x="108" y="18" width="34" height="34" rx="3" fill="#fff" />
+          <rect x="114" y="24" width="22" height="22" rx="2" fill="#111" />
+          <!-- Módulo BL -->
+          <rect x="10" y="100" width="50" height="50" rx="5" fill="#111" />
+          <rect x="18" y="108" width="34" height="34" rx="3" fill="#fff" />
+          <rect x="24" y="114" width="22" height="22" rx="2" fill="#111" />
+          <!-- Data dots -->
+          <rect x="72" y="10" width="8" height="8" fill="#111" />
+          <rect x="82" y="10" width="8" height="8" fill="#111" />
+          <rect x="72" y="20" width="8" height="8" fill="#111" />
+          <rect x="72" y="72" width="8" height="8" fill="#111" />
+          <rect x="82" y="72" width="8" height="8" fill="#111" />
+          <rect x="92" y="72" width="8" height="8" fill="#111" />
+          <rect x="72" y="82" width="8" height="8" fill="#111" />
+          <rect x="92" y="82" width="8" height="8" fill="#111" />
+          <rect x="72" y="92" width="8" height="8" fill="#111" />
+          <rect x="102" y="72" width="8" height="8" fill="#111" />
+          <rect x="112" y="72" width="8" height="8" fill="#111" />
+          <rect x="122" y="82" width="8" height="8" fill="#111" />
+          <rect x="102" y="92" width="8" height="8" fill="#111" />
+          <rect x="112" y="92" width="8" height="8" fill="#111" />
+          <rect x="122" y="72" width="8" height="8" fill="#111" />
+          <rect x="102" y="112" width="8" height="8" fill="#111" />
+          <rect x="112" y="102" width="8" height="8" fill="#111" />
+          <rect x="122" y="112" width="8" height="8" fill="#111" />
+          <rect x="102" y="122" width="8" height="8" fill="#111" />
+          <rect x="112" y="122" width="8" height="8" fill="#111" />
+          <rect x="122" y="102" width="8" height="8" fill="#111" />
+          <rect x="82" y="102" width="8" height="8" fill="#111" />
+          <rect x="92" y="112" width="8" height="8" fill="#111" />
+          <rect x="82" y="122" width="8" height="8" fill="#111" />
+          <rect x="82" y="132" width="8" height="8" fill="#111" />
+          <rect x="72" y="112" width="8" height="8" fill="#111" />
+          <rect x="72" y="132" width="8" height="8" fill="#111" />
+          <rect x="10" y="72" width="8" height="8" fill="#111" />
+          <rect x="20" y="72" width="8" height="8" fill="#111" />
+          <rect x="30" y="82" width="8" height="8" fill="#111" />
+          <rect x="40" y="72" width="8" height="8" fill="#111" />
+          <rect x="50" y="82" width="8" height="8" fill="#111" />
+          <rect x="10" y="92" width="8" height="8" fill="#111" />
+          <rect x="30" y="92" width="8" height="8" fill="#111" />
+          <rect x="50" y="92" width="8" height="8" fill="#111" />
+        </svg>
+      </div>
+    </section>
+
+    <!-- PANEL INFERIOR -->
+    <section class="panel text-center" aria-label="Resultado de validación exitosa">
+
+      <div class="alert alert-success text-start">
+        <div class="media d-flex align-items-center mb-2">
+          <div class="media-left">
+            <i class="fa fa-check-circle fa-3x"></i>
+          </div>
+          <div class="media-body ps-3">
+            <h2 class="h4 fw-bold mb-0">Acceso Válido</h2>
+          </div>
+        </div>
+
+        <div class="media-details border-top border-success border-opacity-25 pt-3 mt-2">
+          <p class="h6 fw-bold mb-1">Evento</p>
+          <p class="margin-0 mb-3" style="font-size: 0.95rem; line-height: 1.3;">Homenaje al Cuchi Leguizamón, por la Orquesta Nacional de Música Argentina con Lorena Astudillo</p>
+          
+          <p class="h6 fw-bold mb-1 mt-3 pt-2 border-top border-success border-opacity-25">Zona / Sector</p>
+          <p class="margin-0 mb-3" style="font-size: 0.95rem;">Sala Argentina</p>
+
+          <p class="h6 fw-bold mb-1 mt-3 pt-2 border-top border-success border-opacity-25">Fecha y Hora</p>
+          <p class="margin-0" style="font-size: 0.95rem;">26-03-2026 – 13:00 hs</p>
+        </div>
+      </div>
+
+      <!-- Countdown auto-retorno -->
+      <div class="mt-4" aria-live="polite">
+        <p class="text-muted small mb-2">Volviendo al escaneo en <strong id="counter">5</strong> seg...</p>
+        <div class="progress" style="height: 6px;">
+          <div class="progress-bar-anim bg-success" id="progress-bar"></div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- FOOTER BLANCO -->
+    <footer class="panel-footer text-center">
+      <div>
+        <span class="fw-bold">Sistema Nacional de Turnos.</span><br>
+        versión, 0000
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Cuenta regresiva y redirección automática
+    let sec = 5;
+    const counter = document.getElementById('counter');
+    const interval = setInterval(() => {
+      sec--;
+      if (counter) counter.textContent = sec;
+      if (sec <= 0) {
+        clearInterval(interval);
+        window.location.href = 'pantalla-lectura.html';
+      }
+    }, 1000);
+  </script>
+</body>
+
+</html>
