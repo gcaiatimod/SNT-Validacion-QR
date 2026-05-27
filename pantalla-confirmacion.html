@@ -20,7 +20,7 @@
   <main class="flex-column d-flex min-vh-100" id="main-content">
 
     <!-- Topbar -->
-    <div class="topbar d-flex align-items-center p-3">
+    <div class="topbar d-flex align-items-center justify-content-between p-3">
       <a id="btn-back-confirmacion" href="pantalla-lectura.html" class="btn-back-icon rounded-circle text-white"
         style="width: 40px; height: 40px; background: rgba(255,255,255,0.2); text-decoration: none;"
         title="Volver al escaneo" aria-label="Volver">
@@ -29,6 +29,14 @@
             d="M1472 736v128q0 53-32.5 90.5T1355 992H651l293 294q38 36 38 90t-38 90l-75 76q-37 37-90 37q-52 0-91-37L37 890Q0 853 0 800q0-52 37-91L688 59q38-38 91-38q52 0 90 38l75 74q38 38 38 91t-38 91L651 608h704q52 0 84.5 37.5T1472 736" />
         </svg>
       </a>
+
+      <!-- Usuario logueado y deslogueo -->
+      <div class="user-badge d-flex align-items-center gap-2 text-white shadow-sm">
+        <span class="user-name fw-bold" style="font-size: 0.8rem;"><i class="fa fa-user me-1"></i>Empleado SNT</span>
+        <a href="index.html" class="btn-logout" title="Cerrar sesión" aria-label="Cerrar sesión">
+          <i class="fa fa-sign-out"></i>
+        </a>
+      </div>
     </div>
 
     <!-- QR leído (representación) -->
