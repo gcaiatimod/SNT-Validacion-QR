@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SNT – Confirmación de Turno</title>
+  <meta name="description" content="Sistema de Validación QR – Confirmá los datos del turno antes de validar.">
+
+  <!-- CSS del proyecto SNT -->
+  <!-- <link rel="stylesheet" href="https://qa-usuarios-turnos.argentina.gob.ar/styles.095039e6a6d50589.css"> -->
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css"> -->
+  <link rel="stylesheet" href="assets/css/styles.095039e6a6d50589.css">
+  <link rel="stylesheet" href="assets/css/select2-bootstrap-5-theme.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/snt-validacion.css">
+</head>
+
+<body class="m-0 page-confirmacion">
+  <main class="flex-column d-flex min-vh-100" id="main-content">
+
+    <!-- Topbar -->
+    <div class="topbar d-flex align-items-center p-3">
+      <a id="btn-back-confirmacion" href="pantalla-lectura.html" class="btn-back-icon rounded-circle text-white"
+        style="width: 40px; height: 40px; background: rgba(255,255,255,0.2); text-decoration: none;"
+        title="Volver al escaneo" aria-label="Volver">
+        <svg class="icon-back" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1472 1600">
+          <path fill="currentColor"
+            d="M1472 736v128q0 53-32.5 90.5T1355 992H651l293 294q38 36 38 90t-38 90l-75 76q-37 37-90 37q-52 0-91-37L37 890Q0 853 0 800q0-52 37-91L688 59q38-38 91-38q52 0 90 38l75 74q38 38 38 91t-38 91L651 608h704q52 0 84.5 37.5T1472 736" />
+        </svg>
+      </a>
+    </div>
+
+    <!-- QR leído (representación) -->
+    <section class="flex-grow-1 d-flex align-items-center justify-content-center" aria-label="Código QR escaneado">
+      <div class="qr-display">
+        <!-- QR placeholder SVG -->
+        <svg width="120" height="120" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Módulo TL -->
+          <rect x="10" y="10" width="50" height="50" rx="5" fill="#111" />
+          <rect x="18" y="18" width="34" height="34" rx="3" fill="#fff" />
+          <rect x="24" y="24" width="22" height="22" rx="2" fill="#111" />
+          <!-- Módulo TR -->
+          <rect x="100" y="10" width="50" height="50" rx="5" fill="#111" />
+          <rect x="108" y="18" width="34" height="34" rx="3" fill="#fff" />
+          <rect x="114" y="24" width="22" height="22" rx="2" fill="#111" />
+          <!-- Módulo BL -->
+          <rect x="10" y="100" width="50" height="50" rx="5" fill="#111" />
+          <rect x="18" y="108" width="34" height="34" rx="3" fill="#fff" />
+          <rect x="24" y="114" width="22" height="22" rx="2" fill="#111" />
+          <!-- Data dots -->
+          <rect x="72" y="10" width="8" height="8" fill="#111" />
+          <rect x="82" y="10" width="8" height="8" fill="#111" />
+          <rect x="72" y="20" width="8" height="8" fill="#111" />
+          <rect x="72" y="72" width="8" height="8" fill="#111" />
+          <rect x="82" y="72" width="8" height="8" fill="#111" />
+          <rect x="92" y="72" width="8" height="8" fill="#111" />
+          <rect x="72" y="82" width="8" height="8" fill="#111" />
+          <rect x="92" y="82" width="8" height="8" fill="#111" />
+          <rect x="72" y="92" width="8" height="8" fill="#111" />
+          <rect x="102" y="72" width="8" height="8" fill="#111" />
+          <rect x="112" y="72" width="8" height="8" fill="#111" />
+          <rect x="122" y="82" width="8" height="8" fill="#111" />
+          <rect x="102" y="92" width="8" height="8" fill="#111" />
+          <rect x="112" y="92" width="8" height="8" fill="#111" />
+          <rect x="122" y="72" width="8" height="8" fill="#111" />
+          <rect x="102" y="112" width="8" height="8" fill="#111" />
+          <rect x="112" y="102" width="8" height="8" fill="#111" />
+          <rect x="122" y="112" width="8" height="8" fill="#111" />
+          <rect x="102" y="122" width="8" height="8" fill="#111" />
+          <rect x="112" y="122" width="8" height="8" fill="#111" />
+          <rect x="122" y="102" width="8" height="8" fill="#111" />
+          <rect x="82" y="102" width="8" height="8" fill="#111" />
+          <rect x="92" y="112" width="8" height="8" fill="#111" />
+          <rect x="82" y="122" width="8" height="8" fill="#111" />
+          <rect x="82" y="132" width="8" height="8" fill="#111" />
+          <rect x="72" y="112" width="8" height="8" fill="#111" />
+          <rect x="72" y="132" width="8" height="8" fill="#111" />
+          <rect x="10" y="72" width="8" height="8" fill="#111" />
+          <rect x="20" y="72" width="8" height="8" fill="#111" />
+          <rect x="30" y="82" width="8" height="8" fill="#111" />
+          <rect x="40" y="72" width="8" height="8" fill="#111" />
+          <rect x="50" y="82" width="8" height="8" fill="#111" />
+          <rect x="10" y="92" width="8" height="8" fill="#111" />
+          <rect x="30" y="92" width="8" height="8" fill="#111" />
+          <rect x="50" y="92" width="8" height="8" fill="#111" />
+        </svg>
+      </div>
+    </section>
+
+    <!-- PANEL INFERIOR – Datos del turno -->
+    <section class="panel text-center" aria-label="Confirmación de datos del turno">
+
+      <div class="alert alert-info text-start">
+        <div class="media d-flex align-items-center mb-2">
+          <div class="media-left">
+            <i class="fa fa-info-circle fa-3x"></i>
+          </div>
+          <div class="media-body ps-3">
+            <h2 class="h4 fw-bold mb-0">Datos del turno</h2>
+          </div>
+        </div>
+
+        <div class="media-details border-top border-info border-opacity-25 pt-3 mt-2">
+
+          <!-- TITULAR (jerarquía más alta) -->
+          <p class="confirmacion-label">Titular</p>
+          <p class="confirmacion-valor confirmacion-valor--principal">Juan Carlos Pérez</p>
+
+          <!-- DNI -->
+          <p class="confirmacion-label mt-3 pt-2 border-top border-info border-opacity-25">DNI</p>
+          <p class="confirmacion-valor confirmacion-valor--principal">30.456.789</p>
+
+          <!-- EVENTO -->
+          <p class="confirmacion-label mt-3 pt-2 border-top border-info border-opacity-25">Evento</p>
+          <p class="confirmacion-valor">Homenaje al Cuchi Leguizamón, por la Orquesta Nacional de Música Argentina con
+            Lorena Astudillo</p>
+
+          <!-- ZONA / SECTOR -->
+          <p class="confirmacion-label mt-3 pt-2 border-top border-info border-opacity-25">Zona / Sector</p>
+          <p class="confirmacion-valor">Sala Argentina</p>
+
+          <!-- FECHA DEL TURNO -->
+          <p class="confirmacion-label mt-3 pt-2 border-top border-info border-opacity-25">Fecha del turno</p>
+          <p class="confirmacion-valor confirmacion-valor--destacado">
+            <i class="fa fa-calendar-o me-1"></i>26-03-2026
+          </p>
+
+          <!-- HORA DEL TURNO -->
+          <p class="confirmacion-label mt-3 pt-2 border-top border-info border-opacity-25">Hora del turno</p>
+          <p class="confirmacion-valor confirmacion-valor--destacado">
+            <i class="fa fa-clock-o me-1"></i>13:00 hs
+          </p>
+
+          <!-- DÍA DEL TURNO -->
+          <p class="confirmacion-label mt-3 pt-2 border-top border-info border-opacity-25">Día</p>
+          <p class="confirmacion-valor confirmacion-valor--destacado">
+            <i class="fa fa-calendar me-1"></i>Jueves
+          </p>
+
+          <!-- NÚMERO DE TURNO -->
+          <p class="confirmacion-label mt-3 pt-2 border-top border-info border-opacity-25">Número de turno</p>
+          <p class="confirmacion-valor confirmacion-valor--codigo">T-2026-00458</p>
+
+        </div>
+      </div>
+
+      <!-- Botones de acción -->
+      <div class="d-flex gap-2 mt-3">
+        <a id="btn-confirmar-turno" href="pantalla-valido.html"
+          class="btn btn-success rounded-pill flex-fill py-2 fw-bold d-flex align-items-center justify-content-center gap-1 shadow-sm"
+          style="font-size: 0.85rem; color: white !important;">
+          <span class="icon-sm">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="50" fill="white" fill-opacity="0.3" />
+              <path d="M30 50 L45 65 L75 35" stroke="white" stroke-width="12" fill="none" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </span>
+          Confirmar Acceso
+        </a>
+        <a id="btn-rechazar-turno" href="pantalla-error.html"
+          class="btn btn-danger rounded-pill flex-fill py-2 fw-bold d-flex align-items-center justify-content-center gap-1 shadow-sm"
+          style="font-size: 0.85rem; color: white !important;">
+          <span class="icon-sm">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="50" fill="white" fill-opacity="0.3" />
+              <g transform="translate(30, 30) scale(0.035)">
+                <path fill="white"
+                  d="M1202 1066q0 40-28 68l-136 136q-28 28-68 28t-68-28L608 976l-294 294q-28 28-68 28t-68-28L42 1134q-28-28-28-68t28-68l294-294L42 410q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 294l294-294q28-28 68-28t68 28l136 136q28 28 28 68t-28 68L880 704l294 294q28 28 28 68" />
+              </g>
+            </svg>
+          </span>
+          Rechazar
+        </a>
+      </div>
+
+    </section>
+
+    <!-- FOOTER BLANCO -->
+    <footer class="panel-footer text-center">
+      <div>
+        <span class="fw-bold">Sistema Nacional de Turnos.</span><br>
+        versión, 0000
+      </div>
+    </footer>
+  </main>
+</body>
+
+</html>
